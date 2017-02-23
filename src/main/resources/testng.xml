@@ -3,7 +3,7 @@
 <suite name="Suite">
   <test name="Test">
     <classes>
-      <class name="MavenDemo.TestFinance"/>
+      <class name="pages.TestFinance"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

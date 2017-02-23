@@ -1,7 +1,6 @@
-package MavenDemo;
+package pages;
 
 import java.io.FileInputStream;
-import java.util.List;
 
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -44,11 +43,11 @@ public class TestFinance {
 		driver.get("https://finance.corp.syntel.in/");
 		driver.manage().window().maximize();
 
-		// System.setProperty("webdriver.chrome.driver",
-		// "C:\\chromedriver_win32\\chromedriver.exe");
-		// WebDriver driver = new ChromeDriver();
-		// driver.get("https://finance.corp.syntel.in/");
-		// driver.manage().window().maximize();
+		// Chrome
+//		System.setProperty("webdriver.chrome.driver", "C:\\chromedriver_win32\\chromedriver.exe");
+//		WebDriver driver = new ChromeDriver();
+//		driver.get("https://finance.corp.syntel.in/");
+//		driver.manage().window().maximize();
 
 		// initialize IE driver
 		// File ieFile = new
@@ -73,13 +72,6 @@ public class TestFinance {
 			XSSFWorkbook wb = new XSSFWorkbook(fis);
 			XSSFSheet sh1 = wb.getSheetAt(0);
 
-			// syntelligence login
-			// wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='adusers']/center/b/a")));
-			// WebElement submit =
-			// driver.findElement(By.xpath("//*[@id='adusers']/center/b/a"));
-			// JavascriptExecutor exe = (JavascriptExecutor) driver;
-			// exe.executeScript("arguments[0].click();", submit);
-
 			String username = sh1.getRow(0).getCell(1).getStringCellValue();
 			String password = sh1.getRow(1).getCell(1).getStringCellValue();
 
@@ -87,28 +79,7 @@ public class TestFinance {
 
 			wb.close();
 
-			// alert window
-			// String parentWindowHandler = driver.getWindowHandle(); // Store
-			// your parent window
-			// String subWindowHandler = null;
-			//
-			// Set<String> handles = driver.getWindowHandles(); // get all
-			// window handles
-			// Iterator<String> iterator = handles.iterator();
-			// while (iterator.hasNext()){
-			// subWindowHandler = iterator.next();
-			// }
-			// driver.switchTo().window(subWindowHandler); // switch to popup
-			// window
-			// // perform operations on popup
-			//
-			// driver.findElement(By.name("userid")).sendKeys(username);
-			// driver.findElement(By.name("password")).sendKeys(password);
-			// driver.findElement(By.name("OK")).click();
-			//
-			// driver.switchTo().window(parentWindowHandler); // switch back to
-			// parent window
-
+			
 			wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("userid")));
 			driver.findElement(By.id("userid")).sendKeys(username);
 
@@ -132,45 +103,50 @@ public class TestFinance {
 				// exe.executeScript("arguments[0].click();", systemProfile);
 
 				// by absolute xpath - system profile page
-				// wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/table[1]/tbody/tr[2]/td/table/tbody/tr/td[1]/ul/li[1]/table/tbody/tr[2]/td/div/nav/div[2]/ul/li[7]/a")));
-				// WebElement systemProfile =
-				// driver.findElement(By.xpath("/html/body/table[1]/tbody/tr[2]/td/table/tbody/tr/td[1]/ul/li[1]/table/tbody/tr[2]/td/div/nav/div[2]/ul/li[7]/a"));
-				// exe.executeScript("arguments[0].click();", systemProfile);
+				wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
+						"/html/body/table[1]/tbody/tr[2]/td/table/tbody/tr/td[1]/ul/li[1]/table/tbody/tr[2]/td/div/nav/div[2]/ul/li[7]/a")));
+				WebElement systemProfile = driver.findElement(By.xpath(
+						"/html/body/table[1]/tbody/tr[2]/td/table/tbody/tr/td[1]/ul/li[1]/table/tbody/tr[2]/td/div/nav/div[2]/ul/li[7]/a"));
+				exe.executeScript("arguments[0].click();", systemProfile);
 
 				// Employee Self Service
-				wait.until(ExpectedConditions.visibilityOfElementLocated(By
-						.xpath("html/body/table[1]/tbody/tr[1]/td/div[2]/header/div[1]/div[1]/nav/div[1]/ul/li[3]/a")));
-				WebElement selfService = driver.findElement(By
-						.xpath("html/body/table[1]/tbody/tr[1]/td/div[2]/header/div[1]/div[1]/nav/div[1]/ul/li[3]/a"));
-				exe.executeScript("arguments[0].click();", selfService);
-
-				// Gate Pass Request
-				wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-						"html/body/table[1]/tbody/tr[1]/td/div[2]/header/div[1]/div[1]/nav/div[1]/ul/li[3]/div/div[2]/div[4]/ul/li[2]/a")));
-				WebElement mainMenu = driver.findElement(By.xpath(
-						"html/body/table[1]/tbody/tr[1]/td/div[2]/header/div[1]/div[1]/nav/div[1]/ul/li[3]/div/div[2]/div[4]/ul/li[2]/a"));
-				exe.executeScript("arguments[0].click();", mainMenu);
-
-				wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-						"html/body/table[1]/tbody/tr[1]/td/div[2]/header/div[1]/div[1]/nav/div[1]/ul/li[3]/div/div[2]/div[4]/ul/li[2]/div[3]/div[2]/div[2]/ul/li[10]/a")));
-				WebElement gatePassReq = driver.findElement(By.xpath(
-						"html/body/table[1]/tbody/tr[1]/td/div[2]/header/div[1]/div[1]/nav/div[1]/ul/li[3]/div/div[2]/div[4]/ul/li[2]/div[3]/div[2]/div[2]/ul/li[10]/a"));
-				exe.executeScript("arguments[0].click();", gatePassReq);
-
-				wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='fldra_SY_SPZ_GP_FDR']")));
-				WebElement gatePass = driver.findElement(By.xpath("//*[@id='fldra_SY_SPZ_GP_FDR']"));
-				exe.executeScript("arguments[0].click();", gatePass);
-
-				wait.until(ExpectedConditions
-						.visibilityOfElementLocated(By.xpath("//*[@id='crefli_SY_LOC_MAP_CMP_GBL_1']/a")));
-				WebElement gatePassInnerReq = driver.findElement(By.xpath("//*[@id='crefli_SY_LOC_MAP_CMP_GBL_1']/a"));
-				exe.executeScript("arguments[0].click();", gatePassInnerReq);
-
-				wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-						"html/body/form/div[5]/table/tbody/tr/td/div/table/tbody/tr[2]/td[2]/div/table/tbody/tr[2]/td/table/tbody/tr[2]/td[2]/div/input")));
-				WebElement location = driver.findElement(By.xpath("//*[@id='SY_SPZ_GP_WRK_SY_LOCATION_MUM']"));
+				// wait.until(ExpectedConditions.visibilityOfElementLocated(By
+				// .xpath("html/body/table[1]/tbody/tr[1]/td/div[2]/header/div[1]/div[1]/nav/div[1]/ul/li[3]/a")));
+				// WebElement selfService = driver.findElement(By
+				// .xpath("html/body/table[1]/tbody/tr[1]/td/div[2]/header/div[1]/div[1]/nav/div[1]/ul/li[3]/a"));
+				// exe.executeScript("arguments[0].click();", selfService);
+				//
+				// // Gate Pass Request
+				// wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
+				// "html/body/table[1]/tbody/tr[1]/td/div[2]/header/div[1]/div[1]/nav/div[1]/ul/li[3]/div/div[2]/div[4]/ul/li[2]/a")));
+				// WebElement mainMenu = driver.findElement(By.xpath(
+				// "html/body/table[1]/tbody/tr[1]/td/div[2]/header/div[1]/div[1]/nav/div[1]/ul/li[3]/div/div[2]/div[4]/ul/li[2]/a"));
+				// exe.executeScript("arguments[0].click();", mainMenu);
+				//
+				// wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
+				// "html/body/table[1]/tbody/tr[1]/td/div[2]/header/div[1]/div[1]/nav/div[1]/ul/li[3]/div/div[2]/div[4]/ul/li[2]/div[3]/div[2]/div[2]/ul/li[10]/a")));
+				// WebElement gatePassReq = driver.findElement(By.xpath(
+				// "html/body/table[1]/tbody/tr[1]/td/div[2]/header/div[1]/div[1]/nav/div[1]/ul/li[3]/div/div[2]/div[4]/ul/li[2]/div[3]/div[2]/div[2]/ul/li[10]/a"));
+				// exe.executeScript("arguments[0].click();", gatePassReq);
+				//
+				// wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='fldra_SY_SPZ_GP_FDR']")));
+				// WebElement gatePass =
+				// driver.findElement(By.xpath("//*[@id='fldra_SY_SPZ_GP_FDR']"));
+				// exe.executeScript("arguments[0].click();", gatePass);
+				//
+				// wait.until(ExpectedConditions
+				// .visibilityOfElementLocated(By.xpath("//*[@id='crefli_SY_LOC_MAP_CMP_GBL_1']/a")));
+				// WebElement gatePassInnerReq =
+				// driver.findElement(By.xpath("//*[@id='crefli_SY_LOC_MAP_CMP_GBL_1']/a"));
+				// exe.executeScript("arguments[0].click();", gatePassInnerReq);
+				//
+				// wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
+				// "html/body/form/div[5]/table/tbody/tr/td/div/table/tbody/tr[2]/td[2]/div/table/tbody/tr[2]/td/table/tbody/tr[2]/td[2]/div/input")));
+				// WebElement location =
+				// driver.findElement(By.xpath("//*[@id='SY_SPZ_GP_WRK_SY_LOCATION_MUM']"));
+				// //
 				// "html/body/form/div[5]/table/tbody/tr/td/div/table/tbody/tr[2]/td[2]/div/table/tbody/tr[2]/td/table/tbody/tr[2]/td[2]/div/input"));
-				exe.executeScript("arguments[0].click();", location);
+				// exe.executeScript("arguments[0].click();", location);
 
 				// wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='fldra_SY_GP_REVIEW']")));
 				// WebElement viewGatePass =
@@ -181,9 +157,6 @@ public class TestFinance {
 				// WebElement dailyPass =
 				// driver.findElement(By.xpath("//*[@id='crefli_SY_GP_DAILY_RV_GBL']/a"));
 				// exe.executeScript("arguments[0].click();", dailyPass);
-
-				// driver.manage().timeouts().implicitlyWait(30,
-				// TimeUnit.SECONDS);
 
 				// wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("html/body/form/div[5]/div[3]/label/span/input")));
 				// if (
@@ -196,8 +169,8 @@ public class TestFinance {
 				// WebElement caseSensitive =
 				// exe.executeScript("arguments[0].click();", caseSensitive);
 
-				wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='SY_GP_DAILY_RV_REQ_ID$op']")));
-				driver.findElement(By.id("SY_GP_DAILY_RV_REQ_ID$op")).sendKeys("between");
+				// wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='SY_GP_DAILY_RV_REQ_ID$op']")));
+				// driver.findElement(By.id("SY_GP_DAILY_RV_REQ_ID$op")).sendKeys("between");
 				// WebElement reqId =
 				// exe.executeScript("arguments[0].click();", reqId);
 
@@ -223,13 +196,20 @@ public class TestFinance {
 				// new
 				// Select(driver.findElement(By.xpath("//*[@id='PSOPRDEFN_LANGUAGE_CD']"))).selectByVisibleText("French");
 
+				Thread.sleep(5000);
+				driver.switchTo().defaultContent(); // you are now outside both frames
+				driver.switchTo().frame("ptifrmtgtframe");
+
 				Select selectOption = new Select(driver.findElement(By.xpath(
 						"html/body/form/div[5]/table/tbody/tr[1]/td/div/table/tbody/tr[6]/td[2]/table/tbody/tr[3]/td[2]/div/select")));
 				selectOption.selectByValue("ARA");
+				driver.switchTo().defaultContent(); // you are now outside both
+													// frames
 
 				// wait.until(ExpectedConditions.visibilityOfElementLocated(By.tagName("option")));
-				List<WebElement> option = driver.findElements(By.tagName("option"));
-				System.out.println(option.size());
+				// List<WebElement> option =
+				// driver.findElements(By.tagName("option"));
+				// System.out.println(option.size());
 
 				// wait.until(ExpectedConditions.visibilityOfElementLocated(By.tagName("select")));
 				// WebElement mySelectElement1 = (WebElement)
@@ -238,22 +218,22 @@ public class TestFinance {
 				// driver.findElements(By.tagName("iframe")).size();
 				// System.out.println(mySelectElement1);
 
-				int aaa = driver.findElements(By.id("frame")).size();
-				System.out.println(aaa);
-				driver.switchTo().defaultContent();
-
-				driver.switchTo().window(driver.getWindowHandle());
-				System.out.println("hi");
-
-				wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-						"html/body/form/div[5]/table/tbody/tr[1]/td/div/table/tbody/tr[6]/td[2]/table/tbody/tr[3]/td[2]/div/select")));
-				System.out.println("language");
-				WebElement select = driver.findElement(By.xpath(
-						"html/body/form/div[5]/table/tbody/tr[1]/td/div/table/tbody/tr[6]/td[2]/table/tbody/tr[3]/td[2]/div/select"));
-				System.out.println("English");
-				Select dropDown = new Select(select);
-				dropDown.getFirstSelectedOption().getText();
-				dropDown.selectByVisibleText("French");
+				// int aaa = driver.findElements(By.id("frame")).size();
+				// System.out.println(aaa);
+				// driver.switchTo().defaultContent();
+				//
+				// driver.switchTo().window(driver.getWindowHandle());
+				// System.out.println("hi");
+				//
+				// wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
+				// "html/body/form/div[5]/table/tbody/tr[1]/td/div/table/tbody/tr[6]/td[2]/table/tbody/tr[3]/td[2]/div/select")));
+				// System.out.println("language");
+				// WebElement select = driver.findElement(By.xpath(
+				// "html/body/form/div[5]/table/tbody/tr[1]/td/div/table/tbody/tr[6]/td[2]/table/tbody/tr[3]/td[2]/div/select"));
+				// System.out.println("English");
+				// Select dropDown = new Select(select);
+				// dropDown.getFirstSelectedOption().getText();
+				// dropDown.selectByVisibleText("French");
 
 				// wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='PSOPRDEFN_LANGUAGE_CD']")));
 				// WebElement mySelectElement1 = (WebElement)
