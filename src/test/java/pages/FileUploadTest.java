@@ -10,7 +10,7 @@ import base.GenericMethods;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 
-public class FileUpload extends GenericMethods {
+public class FileUploadTest extends GenericMethods {
 
 	@Given("^Login into finance application$")
 	public void login_into_finance_application() throws Throwable {

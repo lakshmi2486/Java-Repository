@@ -1,21 +1,181 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="2" ignored="0" total="7" passed="5">
   <reporter-output>
+    <line>
+      <![CDATA[<br />Wed Mar 15 11:21:40 EDT 2017	:	 The Xpath of TextBox is 	:	//*[@id='username']]]>
+    </line>
+    <line>
+      <![CDATA[<br />Wed Mar 15 11:21:47 EDT 2017	:	 The Input for these TextBox is 	:	LP5009287]]>
+    </line>
+    <line>
+      <![CDATA[<br />Wed Mar 15 11:21:47 EDT 2017	:	 The Xpath of TextBox is 	:	//*[@id='password']]]>
+    </line>
+    <line>
+      <![CDATA[<br />Wed Mar 15 11:21:53 EDT 2017	:	 The Input for these TextBox is 	:	Goodday_51]]>
+    </line>
+    <line>
+      <![CDATA[<br />Wed Mar 15 11:22:31 EDT 2017	:	 The Xpath of TextBox is 	:	//*[@id='divTo']]]>
+    </line>
+    <line>
+      <![CDATA[<br />Wed Mar 15 11:22:38 EDT 2017	:	 The Input for these TextBox is 	:	Abhiram_Patil@syntelinc.com]]>
+    </line>
+    <line>
+      <![CDATA[<br />Wed Mar 15 11:23:29 EDT 2017	:	 The Xpath of TextBox is 	:	//*[@id='username']]]>
+    </line>
+    <line>
+      <![CDATA[<br />Wed Mar 15 11:23:36 EDT 2017	:	 The Input for these TextBox is 	:	LP5009287]]>
+    </line>
+    <line>
+      <![CDATA[<br />Wed Mar 15 11:23:36 EDT 2017	:	 The Xpath of TextBox is 	:	//*[@id='password']]]>
+    </line>
+    <line>
+      <![CDATA[<br />Wed Mar 15 11:23:42 EDT 2017	:	 The Input for these TextBox is 	:	Goodday_51]]>
+    </line>
   </reporter-output>
-  <suite name="Default suite" duration-ms="14333" started-at="2017-02-15T21:19:20Z" finished-at="2017-02-15T21:19:35Z">
+  <suite name="Default suite" duration-ms="184187" started-at="2017-03-15T15:21:19Z" finished-at="2017-03-15T15:24:23Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="14333" started-at="2017-02-15T21:19:20Z" finished-at="2017-02-15T21:19:35Z">
+    <test name="Default test" duration-ms="184187" started-at="2017-03-15T15:21:19Z" finished-at="2017-03-15T15:24:23Z">
       <class name="pages.TestFinance">
-        <test-method status="PASS" signature="SetBrowser()[pri:0, instance:pages.TestFinance@e45f292]" name="SetBrowser" is-config="true" duration-ms="4143" started-at="2017-02-15T16:19:20Z" finished-at="2017-02-15T16:19:25Z">
+        <test-method status="PASS" signature="SetBrowser()[pri:0, instance:pages.TestFinance@4f063c0a]" name="SetBrowser" is-config="true" duration-ms="5818" started-at="2017-03-15T11:21:19Z" finished-at="2017-03-15T11:21:25Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SetBrowser -->
-        <test-method status="PASS" signature="testnglogin()[pri:0, instance:pages.TestFinance@e45f292]" name="testnglogin" duration-ms="10165" started-at="2017-02-15T16:19:25Z" finished-at="2017-02-15T16:19:35Z">
+        <test-method status="PASS" signature="testnglogin()[pri:0, instance:pages.TestFinance@4f063c0a]" name="testnglogin" duration-ms="16845" started-at="2017-03-15T11:22:56Z" finished-at="2017-03-15T11:23:13Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testnglogin -->
       </class> <!-- pages.TestFinance -->
+      <class name="pages.ComposeWebMailTest">
+        <test-method status="PASS" signature="click_on_the_New_Mail_link()[pri:0, instance:pages.ComposeWebMailTest@76707e36]" name="click_on_the_New_Mail_link" duration-ms="3319" started-at="2017-03-15T11:23:13Z" finished-at="2017-03-15T11:23:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- click_on_the_New_Mail_link -->
+        <test-method status="FAIL" signature="close_the_compose_mail_child_window()[pri:0, instance:pages.ComposeWebMailTest@76707e36]" name="close_the_compose_mail_child_window" duration-ms="3111" started-at="2017-03-15T11:23:16Z" finished-at="2017-03-15T11:23:20Z">
+          <exception class="java.lang.NullPointerException">
+            <message>
+              <![CDATA[null value in entry: handle=null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException: null value in entry: handle=null
+	at com.google.common.collect.CollectPreconditions.checkEntryNotNull(CollectPreconditions.java:33)
+	at com.google.common.collect.SingletonImmutableBiMap.<init>(SingletonImmutableBiMap.java:39)
+	at com.google.common.collect.ImmutableBiMap.of(ImmutableBiMap.java:49)
+	at com.google.common.collect.ImmutableMap.of(ImmutableMap.java:70)
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteTargetLocator.window(RemoteWebDriver.java:948)
+	at pages.ComposeWebMailTest.close_the_compose_mail_child_window(ComposeWebMailTest.java:93)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- close_the_compose_mail_child_window -->
+        <test-method status="FAIL" signature="enter_the_email_address_and_save_into_the_draft()[pri:0, instance:pages.ComposeWebMailTest@76707e36]" name="enter_the_email_address_and_save_into_the_draft" duration-ms="14" started-at="2017-03-15T11:23:20Z" finished-at="2017-03-15T11:23:20Z">
+          <exception class="java.lang.NullPointerException">
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException
+	at pages.ComposeWebMailTest.enter_the_email_address_and_save_into_the_draft(ComposeWebMailTest.java:74)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- enter_the_email_address_and_save_into_the_draft -->
+        <test-method status="PASS" signature="login_into_webapp_mail()[pri:0, instance:pages.ComposeWebMailTest@76707e36]" name="login_into_webapp_mail" duration-ms="32528" started-at="2017-03-15T11:23:20Z" finished-at="2017-03-15T11:23:52Z">
+          <reporter-output>
+            <line>
+              <![CDATA[<br />Wed Mar 15 11:23:29 EDT 2017	:	 The Xpath of TextBox is 	:	//*[@id='username']]]>
+            </line>
+            <line>
+              <![CDATA[<br />Wed Mar 15 11:23:36 EDT 2017	:	 The Input for these TextBox is 	:	LP5009287]]>
+            </line>
+            <line>
+              <![CDATA[<br />Wed Mar 15 11:23:36 EDT 2017	:	 The Xpath of TextBox is 	:	//*[@id='password']]]>
+            </line>
+            <line>
+              <![CDATA[<br />Wed Mar 15 11:23:42 EDT 2017	:	 The Input for these TextBox is 	:	Goodday_51]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- login_into_webapp_mail -->
+        <test-method status="PASS" signature="navigate_to_Draft_menu_and_open_the_saved_draft_email()[pri:0, instance:pages.ComposeWebMailTest@76707e36]" name="navigate_to_Draft_menu_and_open_the_saved_draft_email" duration-ms="30748" started-at="2017-03-15T11:23:52Z" finished-at="2017-03-15T11:24:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigate_to_Draft_menu_and_open_the_saved_draft_email -->
+      </class> <!-- pages.ComposeWebMailTest -->
+      <class name="runner.TestRunner">
+        <test-method status="PASS" signature="runCukes()[pri:0, instance:runner.TestRunner@1e6d1014]" name="runCukes" duration-ms="91668" started-at="2017-03-15T11:21:25Z" description="Example of using TestNGCucumberRunner to invoke Cucumber" finished-at="2017-03-15T11:22:56Z">
+          <reporter-output>
+            <line>
+              <![CDATA[<br />Wed Mar 15 11:21:40 EDT 2017	:	 The Xpath of TextBox is 	:	//*[@id='username']]]>
+            </line>
+            <line>
+              <![CDATA[<br />Wed Mar 15 11:21:47 EDT 2017	:	 The Input for these TextBox is 	:	LP5009287]]>
+            </line>
+            <line>
+              <![CDATA[<br />Wed Mar 15 11:21:47 EDT 2017	:	 The Xpath of TextBox is 	:	//*[@id='password']]]>
+            </line>
+            <line>
+              <![CDATA[<br />Wed Mar 15 11:21:53 EDT 2017	:	 The Input for these TextBox is 	:	Goodday_51]]>
+            </line>
+            <line>
+              <![CDATA[<br />Wed Mar 15 11:22:31 EDT 2017	:	 The Xpath of TextBox is 	:	//*[@id='divTo']]]>
+            </line>
+            <line>
+              <![CDATA[<br />Wed Mar 15 11:22:38 EDT 2017	:	 The Input for these TextBox is 	:	Abhiram_Patil@syntelinc.com]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- runCukes -->
+      </class> <!-- runner.TestRunner -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -6,17 +6,13 @@ import java.util.Set;
 
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.junit.Ignore;
-import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
-import org.testng.annotations.Test;
 
 import base.GenericMethods;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 
-public class ComposeWebMail extends GenericMethods {
+public class ComposeWebMailTest extends GenericMethods {
 
 	String parent;
 	String child;

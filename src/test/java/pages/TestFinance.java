@@ -8,7 +8,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -38,16 +38,16 @@ public class TestFinance {
 		// driver.quit();
 
 		// Edge
-		System.setProperty("webdriver.edge.driver", "C:\\MicrosoftWebDriverEdge\\MicrosoftWebDriver.exe");
-		driver = new EdgeDriver();
-		driver.get("https://finance.corp.syntel.in/");
-		driver.manage().window().maximize();
-
-		// Chrome
-//		System.setProperty("webdriver.chrome.driver", "C:\\chromedriver_win32\\chromedriver.exe");
-//		WebDriver driver = new ChromeDriver();
+//		System.setProperty("webdriver.edge.driver", "C:\\MicrosoftWebDriverEdge\\MicrosoftWebDriver.exe");
+//		driver = new EdgeDriver();
 //		driver.get("https://finance.corp.syntel.in/");
 //		driver.manage().window().maximize();
+
+		// Chrome
+		System.setProperty("webdriver.chrome.driver", "C:\\chromedriver_win32\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://finance.corp.syntel.in/");
+		driver.manage().window().maximize();
 
 		// initialize IE driver
 		// File ieFile = new

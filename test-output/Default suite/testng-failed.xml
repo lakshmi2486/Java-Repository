@@ -3,12 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="pages.TestFinance">
+      <class name="pages.ComposeWebMailTest">
         <methods>
-          <include name="testnglogin"/>
-          <include name="SetBrowser"/>
+          <include name="enter_the_email_address_and_save_into_the_draft"/>
+          <include name="close_the_compose_mail_child_window"/>
         </methods>
-      </class> <!-- pages.TestFinance -->
+      </class> <!-- pages.ComposeWebMailTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
