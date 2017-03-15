@@ -6,7 +6,7 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.testng.TestNGCucumberRunner;
 
 @CucumberOptions(features = { "src/test/java/features/SyntelComposeWebMail.feature" }, format = {
-		"json:target/cucumber.json", "html:target/site/cucumber-html" }, tags = "", strict = true, glue = "pages")
+		"json:target/cucumber.json", "html:target/site/cucumber-html" }, tags = "@Test1", strict = true, glue = "pages")
 public class TestRunner {
 
 	@Test(description = "Example of using TestNGCucumberRunner to invoke Cucumber")
